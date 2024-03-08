@@ -59,7 +59,7 @@ def logout(request):
 
 @login_required
 def edit(request, item_id):
-    item = get_object_or_404(Item, id=item_id)
+    item = get_object_or_404(Item, item_id=item_id)
     if request.method == 'POST':
         # Handle form submission and save changes to database
         # You can use a Django form for validation and saving data
@@ -73,7 +73,7 @@ def edit(request, item_id):
 
 @login_required
 def delete(request, item_id):
-    item = get_object_or_404(Item, id=item_id)
+    item = get_object_or_404(Item, item_id=item_id)
     # if request.method == 'POST':
     item.delete()
     # Redirect to some success page or back to the welcome page

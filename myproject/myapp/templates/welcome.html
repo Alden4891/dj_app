@@ -21,7 +21,7 @@
         </ul>
     </nav>
 <div class="container mt-">
-    <h2>Items</h2>
+    <h5><a href="{% url 'welcome' %}">CATALOGUE</a> | <a href="{% url 'generate_pdf' %}" target="_blank">REPORT</a> </h5>
     <a href="{% url 'add_item' %}" class="btn btn-success mb-2">Add Item</a> <!-- Add button -->
     <table class="table">
         <thead>
@@ -39,10 +39,9 @@
                 <td>{{ item.item }}</td>
                 <td>{{ item.description }}</td>
                 <td>
-                    <td><a href="{% url 'edit' item.id %}" class="btn btn-primary">Edit</a></td>  <!-- Edit button with link to edit view -->
-                    <!-- <td><a href="{% url 'delete' item.id %}" class="btn btn-danger">Delete</a></td>   -->
-                    <td><a class="btn btn-danger delete-btn" data-item-id="{{ item.id }}">Delete</a></td>
-                    <td><button class="btn btn-info view-btn" data-item-id="{{ item.id }}">View</button></td> <!-- View button -->
+                    <td><a href="{% url 'edit' item.item_id %}" class="btn btn-primary">Edit</a></td>  <!-- Edit button with link to edit view -->
+                    <td><a class="btn btn-danger delete-btn" data-item-id="{{ item.item_id }}">Delete</a></td>
+                    <td><button class="btn btn-info view-btn" data-item-id="{{ item.item_id }}">View</button></td> <!-- View button -->
 
                 </td> <!-- Add edit button with link to edit_item view -->
             </tr>
